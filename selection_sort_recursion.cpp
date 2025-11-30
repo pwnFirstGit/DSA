@@ -3,14 +3,14 @@ public:
 
     void sort( vector<int> &nums, int n, int start ){
         
-        if( start == n-1 ){
+        if( start >= n-1 ){
             return ;
         }
         
-        int index = start;
-        for(int i=index+1; i<n; i++){
-            if( nums[i] < nums[index] ){
-                index = i;
+        int min_idx = start;
+        for(int i=min_idx+1; i<n; i++){
+            if( nums[i] < nums[min_idx] ){
+                min_idx = i;
             }
         }
 
