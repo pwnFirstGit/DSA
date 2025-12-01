@@ -9,8 +9,8 @@ using namespace std;
                         if( arr[j] < arr[min_idx] ){
                             min_idx = j;
                         }
-                swap( arr[i], arr[min_idx] );
                 }
+                swap( arr[i], arr[min_idx] );
             }
         
     }
