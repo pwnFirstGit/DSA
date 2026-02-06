@@ -58,3 +58,53 @@ public:
         return nums[n-1];
     }
 };
+
+
+*******SOLUTION 3 : *********
+
+    Moore's voting algorithm.
+    algo : 
+    Traverse the array:
+
+    If votes == 0, set candidate = arr[i] and votes = 1.
+    If arr[i] == candidate, increment votes.
+    Otherwise, decrement votes.
+
+explaination : Imagine people in a room raising cards with numbers.
+You walk through the room keeping one card (the candidate) and a small counter:
+
+If your counter is zero, you pick the current person’s card as your candidate and set counter = 1.
+
+If the next person has the same card, you increase the counter (that’s more votes for the candidate).
+
+If they have a different card, you decrease the counter (one vote cancels one of the candidate’s votes).
+At the end of the walk, whatever card you’re holding is the candidate. If one number truly appears more than half the time, that card will survive.
+
+
+
+
+
+    class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        
+    int count = 0;
+    int candidate = -1;
+    for( int i=0; i<nums.size(); i++ ){
+        if( count == 0 ){
+            candidate = nums[i];
+            count = 1;
+        }
+        else if( nums[i] == candidate ){
+            count++;
+        }
+        else{
+            count--;
+        }
+    }
+
+    return candidate;
+
+
+    }
+};
