@@ -7,10 +7,10 @@ public:
         int len1 = mid - s + 1;
         int len2 = e - mid;
 
-        int *pehla = new int[len1];
+        in *pehla = new int[len1];
         int *dusra = new int[len2];
 
-        int k = s;
+        nt k = s;
         for(int i=0; i<len1; i++){
             pehla[i] = nums[k++];
         }
@@ -25,7 +25,7 @@ public:
         k = s;
 
         while( idx1 < len1 && idx2 < len2 ){
-            if( pehla[idx1] < dusra[idx2] ){
+            i( pehla[idx1] < dusra[idx2] ){
                 nums[k++] = pehla[idx1++];
             }
             else{
